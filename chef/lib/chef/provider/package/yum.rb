@@ -180,6 +180,10 @@ class Chef
             run_command_with_systems_locale(
              :command => "yum -d0 -e0 -y remove #{name}-#{version}"
             )
+          elsif @new_resource.yum_group_install
+            run_command_with_systems_locale(
+              :command => "yum -d0 -e0 -y groupinstall #{@new_resource.yum_group_install}"
+            )
           else
             run_command_with_systems_locale(
              :command => "yum -d0 -e0 -y remove #{name}"
