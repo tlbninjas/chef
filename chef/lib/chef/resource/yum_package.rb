@@ -29,6 +29,12 @@ class Chef
         @provider = Chef::Provider::Package::Yum
       end
       
+      def yum_group_install(group_name=nil)
+        set_or_return(
+          :yum_group_install, 
+          group_name, 
+          :kind_of => [String])
+      end
     end
   end
 end
