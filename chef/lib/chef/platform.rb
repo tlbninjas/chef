@@ -42,7 +42,7 @@ class Chef
         @platforms ||= {
           :mac_os_x => {
             :default => {
-              :package => Chef::Provider::Package::Macports,
+              :package => Chef::Provider::Package::HomeBrew,
               :user => Chef::Provider::User::Dscl,
               :group => Chef::Provider::Group::Dscl
             }
